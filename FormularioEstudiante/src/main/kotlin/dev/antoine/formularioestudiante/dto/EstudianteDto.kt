@@ -3,7 +3,6 @@ package dev.antoine.formularioestudiante.dto
 import kotlinx.serialization.Serializable
 
 @Serializable
-
 data class EstudianteDto(
     val id: Long,
     val apellidos: String,

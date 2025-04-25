@@ -2,12 +2,11 @@ package dev.antoine.formularioestudiante.mappers
 
 import dev.antoine.formularioestudiante.alumnado.models.Estudiante
 import dev.antoine.formularioestudiante.dao.EstudianteEntity
-import dev.antoine.formularioestudiante.dao.EstudiantesDao
 import dev.antoine.formularioestudiante.dto.EstudianteDto
 import java.time.LocalDate
 import java.time.LocalDateTime
 
-fun Estudiante.toModel(): Estudiante {
+fun EstudianteDto.toModel(): Estudiante {
     return Estudiante(
         id,
         apellidos,
@@ -18,14 +17,17 @@ fun Estudiante.toModel(): Estudiante {
         repetidor,
         imagen,
         LocalDateTime.parse(createdAt),
-        LocalDateTime.parse(updatedAt)
+        LocalDateTime.parse(updatedAt),
     )
 }
 
-@JvmName("dtoToModelList") // Para evitar conflictos con el nombre de la funcion
-fun List<Estudiante>.toModel(): List<Estudiante> {
+@JvmName("dtoToModelList")
+fun List<EstudianteDto>.toModel(): List<Estudiante> {
     return map { it.toModel() }
 }
+
+
+
 
 fun Estudiante.toDto(): EstudianteDto {
     return EstudianteDto(
@@ -38,16 +40,14 @@ fun Estudiante.toDto(): EstudianteDto {
         repetidor,
         imagen,
         createdAt.toString(),
-        updatedAt.toString(),
+        updatedAt.toString()
     )
 }
 
-
 @JvmName("modelToDtoList")
 fun List<Estudiante>.toDto(): List<EstudianteDto> {
-    return map { it.toDto() }
+    return this.map { it.toDto() }
 }
-
 
 fun EstudianteEntity.toModel(): Estudiante {
     return Estudiante(
@@ -64,9 +64,9 @@ fun EstudianteEntity.toModel(): Estudiante {
     )
 }
 
-@JvmName("entityToModelList")
-fun List<EstudianteEntity>.toModel(): List<Estudiante> {
-    return map { it.toModel() }
+@JvmName("entityToModelLis")
+fun List<Estudiante>.toModel(): List<Estudiante> {
+    return this.map { it.toModel() }
 }
 
 fun Estudiante.toEntity(): EstudianteEntity {
@@ -84,20 +84,21 @@ fun Estudiante.toEntity(): EstudianteEntity {
     )
 }
 
-@JvmName("modelToEntityList")
+@JvmName("entityToDtoList")
 fun List<Estudiante>.toEntity(): List<EstudianteEntity> {
-    return map { it.toEntity() }
+    return this.map { it.toEntity() }
 }
+
 
 fun EstudianteState.toModel(): Estudiante {
     return Estudiante(
-        id = if (numero.trim()) Estudiante.NEW_ESTUDIANTE else numero.toLong(),
+        id = if (numero.trim().isBlank()) Estudiante.NEW_ESTUDIANTE else numero.toLong(),
         apellidos = apellidos.trim(),
         nombre = nombre.trim(),
         email = email.trim(),
         fechaNacimiento = fechaNacimiento,
-        calificacion = calificacion.trim().replace(",", ".").toDouble(),
-        repetidor = repetidor,
+        calificacion = calificacion.trim().replace(",",".").toDouble(),
+        repetidor = repetidor.trim(),
         imagen = imagen.url ?: "NoEncontrado.png"
     )
 }
