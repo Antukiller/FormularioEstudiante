@@ -11,30 +11,30 @@ import org.lighthousegames.logging.logging
 
 
 @RegisterKotlinMapper(EstudianteEntity::class) // Indicamos que usaremos un mapper de Kotlin, cuidado con los tipos
-interface EstudiantesDao {
+interface EstudianteDao {
 
-    @SqlUpdate("DELETE FROM Estudiantes")
+    @SqlUpdate("DELETE FROM Estudiante")
     fun deleteAll()
 
-    @SqlQuery("SELECT * FROM Estudiantes ORDER BY apellidos ASC")
+    @SqlQuery("SELECT * FROM Estudiante ORDER BY apellidos ASC")
     fun selectAll(): List<EstudianteEntity>
 
-    @SqlQuery("SELECT * FROM Estudiantes WHERE id = :id")
+    @SqlQuery("SELECT * FROM Estudiante WHERE id = :id")
     fun selectById(@Bind("id") id: Long): EstudianteEntity?
 
-    @SqlUpdate("INSERT INTO Estudiantes (apellidos, nombre, email, fechaNacimiento, calificacion, repetidor, imagen, created_at, updated_at) VALUES (:apellidos, :nombre, :email, :fechaNacimiento, :calificacion, :repetidor, :imagen, :createdAt, :updatedAt)")
+    @SqlUpdate("INSERT INTO Estudiante (apellidos, nombre, email, fechaNacimiento, calificacion, repetidor, imagen, created_at, updated_at) VALUES (:apellidos, :nombre, :email, :fechaNacimiento, :calificacion, :repetidor, :imagen, :createdAt, :updatedAt)")
     @GetGeneratedKeys
     fun insert(@BindBean Estudiante: EstudianteEntity): Long
 
-    @SqlUpdate("UPDATE Estudiantes SET apellidos = :apellidos, nombre = :nombre, email = :email, fechaNacimiento = :fechaNacimiento, calificacion = :calificacion, repetidor = :repetidor, imagen = :imagen, updated_at = :updatedAt WHERE id = :id")
+    @SqlUpdate("UPDATE Estudiante SET apellidos = :apellidos, nombre = :nombre, email = :email, fechaNacimiento = :fechaNacimiento, calificacion = :calificacion, repetidor = :repetidor, imagen = :imagen, updated_at = :updatedAt WHERE id = :id")
     fun update(@BindBean Estudiante: EstudianteEntity): Int
 
-    @SqlUpdate("DELETE FROM Estudiantes WHERE id = :id")
+    @SqlUpdate("DELETE FROM Estudiante WHERE id = :id")
     fun delete(@Bind("id") id: Long): Int
 }
 
-fun provideEstudiantesDao(jdbi: Jdbi): EstudiantesDao {
+fun provideEstudianteDao(jdbi: Jdbi): EstudianteDao {
     val logger = logging()
-    logger.debug { "Inicializando EstudiantesDao" }
-    return jdbi.onDemand(EstudiantesDao::class.java)
+    logger.debug { "Inicializando EstudianteDao" }
+    return jdbi.onDemand(EstudianteDao::class.java)
 }
