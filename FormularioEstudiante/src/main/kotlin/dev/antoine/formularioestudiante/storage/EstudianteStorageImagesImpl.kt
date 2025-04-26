@@ -8,13 +8,17 @@ import dev.antoine.formularioestudiante.errors.EstudianteError
 import org.lighthousegames.logging.logging
 import java.io.File
 import java.nio.file.Files
+import java.nio.file.Path
+import java.nio.file.Paths
 import java.nio.file.StandardCopyOption
 import java.time.Instant
+import kotlin.math.E
+import kotlin.math.log
 
 private val logger = logging()
 
 class EstudianteStorageImagesImpl(
-    private val appConfig: AppConfig
+    private val appConfig: AppConfig,
 ): EstudianteStorageImages {
 
     private fun getImagenName(newFileImage: File): String {
@@ -36,18 +40,43 @@ class EstudianteStorageImagesImpl(
     }
 
     override fun loadImage(fileName: String): Result<File, EstudianteError> {
-        TODO("Not yet implemented")
+        logger.debug { "Loading image $fileName" }
+        val file = File(appConfig.imagesDirectory + fileName)
+        return if (file.exists()) {
+            Ok(file)
+        } else {
+            Err(EstudianteError.SaveImage("La imagen no existe :(${file.name})"))
+        }
     }
 
-    override fun deleteimage(fileName: File): Result<Unit, EstudianteError> {
-        TODO("Not yet implemented")
+    override fun deleteImage(fileName: File): Result<Unit, EstudianteError> {
+        logger.debug { "Deleting image $fileName" }
+        Files.deleteIfExists(fileName.toPath())
+        return Ok(Unit)
     }
 
     override fun deleteAllImage(): Result<Long, EstudianteError> {
-        TODO("Not yet implemented")
+        logger.debug { "Deleting all images" }
+        return try {
+            Ok(
+                Files.walk(Paths.get(appConfig.imagesDirectory))
+                    .filter { Files.isRegularFile(it) }
+                    .map { Files.deleteIfExists(it) }
+                    .count()
+            )
+        } catch (e: Exception) {
+            Err(EstudianteError.DeleteImage("Error al borrar todas las imagénes : ${e.message}"))
+        }
     }
 
     override fun updateImage(imagenName: String, newFileImage: File): Result<File, EstudianteError> {
-        TODO("Not yet implemented")
+        logger.debug { "Updating image $imagenName" }
+        return try {
+            val newUpdateImage = File(appConfig.imagesDirectory + imagenName)
+            Files.copy(newFileImage.toPath(), newUpdateImage.toPath(), StandardCopyOption.REPLACE_EXISTING)
+            Ok(newFileImage)
+        } catch (e: Exception) {
+            Err(EstudianteError.SaveImage("Error al guardar la imagen: ${e.message}"))
+        }
     }
 }
