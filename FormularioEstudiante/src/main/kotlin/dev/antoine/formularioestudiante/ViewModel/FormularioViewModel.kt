@@ -1,9 +1,6 @@
 package dev.antoine.formularioestudiante.ViewModel
 
-import com.github.michaelbull.result.Ok
-import com.github.michaelbull.result.Result
-import com.github.michaelbull.result.andThen
-import com.github.michaelbull.result.onSuccess
+import com.github.michaelbull.result.*
 import dev.antoine.formularioestudiante.alumnado.models.Estudiante
 import dev.antoine.formularioestudiante.errors.EstudianteError
 import dev.antoine.formularioestudiante.service.EstudianteService
@@ -12,6 +9,7 @@ import javafx.beans.property.SimpleObjectProperty
 import javafx.scene.image.Image
 import org.lighthousegames.logging.logging
 import java.io.File
+import java.time.LocalDate
 
 private val logger = logging()
 
@@ -150,10 +148,190 @@ class FormularioViewModel (
     }
 
 
+    // Edita un estudiante en el estado y repositorio
     
+    fun editarEstudiante(): Result<Estudiante, EstudianteError> {
+        logger.debug { "Editando Estudiante" }
+        // Actualizamos el estuiante, atención a la imagen
+
+        val updateEstudianteTemp = state.value.estudiantes.copy() // Copiamos el estado
+        val fileNameTemp = state.name.estudiante.oldFIleImage?.name
+            ?: TipoImagen:SIN_IMAGEN.value // Si no hay imagen, ponemos la sin imagen
+        var updateEstudiante = state.value.estudiante.toModel().copy(imagen = fileNameTemp) // Copiamos el estado a modelo
+        return updateEstudiante.validate().andThen {
+            // Tenemos dos opciones, que no haya imagen o que si
+            updateEstudianteTemp.fileImage?.let { newFileImage ->
+                if (updateEstudiante.imagen == TipoImagen.SIN_IMAGEN.value || updateEstudiante.imagen == TipoImagen.EMPTY.value) {
+                    // SI no tiene imagen, la guardamos
+                    storage.saveImage(newFileImage).onSuccess {
+                        updateEstudiante = updateEstudiante.copy(imagen = it.name) // Actualizamos la imagen
+                    }
+                } else {
+                    // Si tiene imagen, la actuliazamos con la nueva, peor hay que borrar la antigua por si cambia
+                    storage.updateImage(fileNameTemp, newFileImage)
+                }
+            }
+            service.save(updateEstudiante).onSuccess {
+                // EL estudiante ya está en la lista, saber su posisción
+                val index = state.value.estudiantes.indexOfFirst { a -> a.id == it.id }
+                state.value = state.value.copy(
+                    estudiantes = state.value.estudiantes.toMutableList().apply { this[index] = it}
+                )
+                updateActualState()
+                Ok(it)
+            }
+        }
+    }
+
+    // Elimina un alumno en el estado y en el repositorio
+    fun eliminarEstudiante(): Result<Unit, EstudianteError> {
+        logger.debug { "Eliminando Estudiante" }
+        // Hay que eliminar su imagen
+        val estudiante = state.value.estudiantes.copy()
+        // Para evitar que cambie en la selección
+        val myId = estudiante.numero.toLong()
+
+        estudiante.fileImage?.let {
+            if (it.name != TipoImagen.SIN_IMAGEN.value) {
+                storage.deleteImage(it)
+            }
+        }
 
 
+        // Borrramos del repositorio
+        service.deleteById(myId)
+        // Actualizamos la lista
+        state.value = state.value.copy(
+            estudiante = state.value.estudiantes.toMutableList().apply { this.removeIf { it.id == myId } }
+        )
+        updateActualState()
+        return Ok(Unit)
+    }
 
 
+    // Actualiza la imagen del estudiante en el estado
+    fun updateImageEstudianteOperacion(fileImage: File) {
+        logger.debug { "Actualizando Imagen: $fileImage" }
+        // Actualizamos la imagen
+        state.value = state.value.copy(
+            estudiante = state.value.estudiantes.copy(
+                imagen = Imagen(fileImage.toURI().toString()),
+                filtrada = fileImage,
+                oldFIleImage = state.value.estudiante.fileImage // Guardamos la antigua por si hay que cambiar al editar y actuliazar la imagen
+            )
+        )
+    }
+
+    fun exportToZip(fileToZip: File): Result<Unit, EstudianteError> {
+        logger.debug { "Exportando a ZIP: $fileToZip" }
+        // recogemos los estudiantes del repositorio
+        service.findAll().andThen {
+            storage.exportToZip(fileToZip, it)
+        }.onFailure {
+            logger.error { "Error al exportar a ZIP: ${it.message}" }
+            return Err(it)
+        }
+        return Ok(Unit)
+    }
+
+    fun loadEstudianteFromZip(fileToUnZip: File): Result<List<Estudiante>, EstudianteError> {
+        logger.debug { "Importando de Zip: $fileToUnZip" }
+        // recogemos los estudiantes del repositorio
+        return storage.loadFromZip(fileToUnZip).onSuccess { lista ->
+            service.deleteAll().andThen {
+                service.saveAll(lista.map { a -> a.copy(id = Estudiante.NEW_ESTUDIANTE) })
+            }.onSuccess {
+                loadAllEstudiantes()
+            }
+        }
+    }
+
+    fun changeEstudianteOperacion(newValue: TipoOperacion) {
+        logger.debug { "Cambiando tipo de operación: $newValue" }
+        if (newValue == TipoOperacion.Editar) {
+            logger.debug { "Copiando estado de Estudiante Seleeccionado a Operacion" }
+            state.value = state.value.copy(
+                estudiante = state.value.estudiante.copy(),
+                tipoOperacion = newValue
+            )
+
+        } else {
+            logger.debug { "Limpiando estado de Estudiante Operacion" }
+            state.value = state.value.copy(
+                estudiante = EstudianteState(),
+                tipoOperacion = newValue
+            )
+        }
+    }
+
+    fun updateDataEstudianteOperacion(
+        apellidos: String,
+        nombre: String,
+        email: String,
+        fechaNacimiento: LocalDate,
+        calificacion: String,
+        isRepetidor: Boolean,
+        imageEstudiante: Estudiante
+    ) {
+        logger.debug { "Actualizando estado de Estudiante Operacion" }
+        state.value = state.value.copy(
+            estudiante = state.value.estudiante.copy(
+                apellidos = apellidos,
+                nombre = nombre,
+                email = email,
+                fechaNacimiento = fechaNacimiento,
+                calificacion = calificacion,
+                isRepetidor = isRepetidor,
+                imagen = imageEstudiante
+                // fileImage = fileimage // No se actualiza aqui, se actualiza en el método de la imagen
+            )
+        )
+    }
+
+    // Mi estado
+    // Enums
+    enum class TipoFiltro(val value: String) {
+        TODOS("Todos/as"), SI("Rep: Sí"), NO("Rep: No")
+    }
+
+    enum class TipoOperacion(val value: String) {
+        NUEVO("Nuevo"), EDITAR("Editar")
+    }
+
+    enum class TipoImagen(val value: String) {
+        SIN_IMAGEN("NoEncontrado.png"), EMPTY("")
+    }
+
+    // Clases que representan al estado
+    // Estado de ViewModel y caso de uso de Formularios
+
+    data class FormularioState(
+        // Los contenedores de colecciones
+        val typesRepetidor: List<String> = emptyList(),
+        val estudiantes: List<Estudiante> = emptyList(),
+
+        // Para las estadísticas
+        val numAprobados: String = "0",
+        val notaMedia: String = "0.0",
+
+        // siempre cambia el tipo de operacion, se actualiza el estudiante
+        val estudiante: EstudianteState = EstudianteState(), // Estado del alumno seleccionado
+
+        val tipoOperacion: TipoOperacion = TipoOperacion.NUEVO,
+    )
+
+    // Estado para formualrios de Estudiante (seleccionado y de operaciones)
+    data class EstudianteState(
+        val numero: String = "",
+        val apellidos: String = "",
+        val nombre: String = "",
+        val email: String = "",
+        val fechaNacimiento: LocalDate = LocalDate.now(),
+        val calificacion: String = "",
+        val isRepetidor: Boolean = false,
+        val imagen: Image = Image(RoutesManager.getResourcesAsStream("image/NoEnconrado.png")),
+        val fileImage: File? = null,
+        val oldFIleImage: File? = null, // Para controlar si se ha cambiado la imagen y borrarla
+    )
 
 }
