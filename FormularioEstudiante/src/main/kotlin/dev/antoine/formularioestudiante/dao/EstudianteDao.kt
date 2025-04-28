@@ -1,5 +1,6 @@
 package dev.antoine.formularioestudiante.dao
 
+import dev.antoine.formularioestudiante.alumnado.models.Estudiante
 import org.jdbi.v3.core.Jdbi
 import org.jdbi.v3.sqlobject.customizer.Bind
 import org.jdbi.v3.sqlobject.customizer.BindBean
@@ -17,7 +18,7 @@ interface EstudianteDao {
     fun deleteAll()
 
     @SqlQuery("SELECT * FROM Estudiante ORDER BY apellidos ASC")
-    fun selectAll(): List<EstudianteEntity>
+    fun selectAll(): List<Estudiante>
 
     @SqlQuery("SELECT * FROM Estudiante WHERE id = :id")
     fun selectById(@Bind("id") id: Long): EstudianteEntity?

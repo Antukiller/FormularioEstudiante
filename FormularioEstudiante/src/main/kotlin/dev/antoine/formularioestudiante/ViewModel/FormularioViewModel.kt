@@ -3,11 +3,16 @@ package dev.antoine.formularioestudiante.ViewModel
 import com.github.michaelbull.result.*
 import dev.antoine.formularioestudiante.alumnado.models.Estudiante
 import dev.antoine.formularioestudiante.errors.EstudianteError
+import dev.antoine.formularioestudiante.mappers.toModel
 import dev.antoine.formularioestudiante.service.EstudianteService
 import dev.antoine.formularioestudiante.storage.EstudianteStorage
+import dev.antoine.formularioestudiante.validators.validate
 import javafx.beans.property.SimpleObjectProperty
 import javafx.scene.image.Image
+import locale.round
+import locale.toLocalNumber
 import org.lighthousegames.logging.logging
+import routes.RoutesManager
 import java.io.File
 import java.time.LocalDate
 
@@ -27,6 +32,11 @@ class FormularioViewModel (
         loadTypes() // Cargamos los tipos de repetidor
     }
 
+    private fun loadTypes() {
+        logger.debug { "Cargando tipos de repetidor" }
+        state.value = state.value.copy(typesRepetidor = TipoFiltro.entries.map { it.value })
+    }
+
     private fun loadAllEstudiantes() {
         logger.debug { "Cargando alumnos del repositrio" }
         service.findAll().onSuccess {
@@ -39,14 +49,14 @@ class FormularioViewModel (
     private fun updateActualState() {
         logger.debug { "Actualizando estado de Aplicacion" }
         val numAprobados = state.value.estudiantes.count { it.isAprobado }.toString()
-        val media = state.value.estudiantes.map { it.calificacion }.averrage()
+        val media = state.value.estudiantes.map { it.calificacion }.average()
         val notaMedia = if (media.isNaN()) "0.00" else media.round(2).toLocalNumber()
         // Solo toca el estado una vez para evitar problemas de concurrrencia
-        state.value = state.value.copy(
-            numAprobados = numAprobados,
-            media = media,
-            estudiante = EstudianteState()
-        )
+       state.value = state.value.copy(
+           numAprobados = numAprobados,
+           notaMedia = notaMedia,
+           estudiante = EstudianteState()
+       )
     }
 
 
@@ -60,7 +70,7 @@ class FormularioViewModel (
                 when (tipo) {
                     TipoFiltro.TODOS.value -> true
                     TipoFiltro.SI.value -> estudiante.repetidor
-                    TipoFlitro.NO.value -> !estudiante.repetidor
+                    TipoFiltro.NO.value -> !estudiante.repetidor
                     else -> true
                 }
             }.filter { estudiante ->
@@ -97,10 +107,11 @@ class FormularioViewModel (
     // carga en el estado el alumno seleccionado
     fun updateEstudiantesSeleccionados (estudiante: Estudiante) {
         logger.debug { "Actuliazando estado de estudiante: $estudiante" }
-        // Datos de la imagen
 
-        var imagen = Image(RoutesManager.getResourcesAsStream("images/NoEcontrado.png"))
-        var fileImage = File(RoutesManager.getResourcesAsStream("images/NoEcontrado.png").toURI())
+
+        // Datos de la imagen
+        var imagen = Image(RoutesManager.getResourcesAsStram("images/NoEcontrado.png"))
+        var fileImage = File(RoutesManager.getResource("images/NoEcontrado.png").toURI())
 
         storage.loadImage(estudiante.imagen).onSuccess {
             imagen = Image(it.absoluteFile.toURI().toString())
@@ -114,10 +125,10 @@ class FormularioViewModel (
                 nombre = estudiante.nombre,
                 email = estudiante.email,
                 fechaNacimiento = estudiante.fechaNacimiento,
-                calificacion = estudiante.calificacion,
+                calificacion = estudiante.calificacion.round(2).toLocalNumber(),
                 repetidor = estudiante.repetidor,
                 imagen = imagen,
-                filtrada = fileImage
+                fileImage = fileImage
             )
         )
 
@@ -127,7 +138,7 @@ class FormularioViewModel (
     // Crea un nuevo alumno en el estado y repositorio
     fun crearEstudiante(): Result<Estudiante, EstudianteError> {
         logger.debug { "Creando Estudiante" }
-        val newEstudianteTemp = state.value.estudiantes.copy()
+        val newEstudianteTemp = state.value.estudiante.copy()
         var newEstudiante = newEstudianteTemp.toModel().copy(id = Estudiante.NEW_ESTUDIANTE)
         return newEstudiante.validate().andThen {
             // Copiamos la imagen si no es nula
@@ -154,10 +165,10 @@ class FormularioViewModel (
         logger.debug { "Editando Estudiante" }
         // Actualizamos el estuiante, atención a la imagen
 
-        val updateEstudianteTemp = state.value.estudiantes.copy() // Copiamos el estado
-        val fileNameTemp = state.name.estudiante.oldFIleImage?.name
-            ?: TipoImagen:SIN_IMAGEN.value // Si no hay imagen, ponemos la sin imagen
-        var updateEstudiante = state.value.estudiante.toModel().copy(imagen = fileNameTemp) // Copiamos el estado a modelo
+        val updateEstudianteTemp = state.value.estudiante.copy() // Copiamos el estado
+        val fileNameTemp = state.value.estudiante.oldFIleImage?.name
+            ?: TipoImagen.SIN_IMAGEN // Si no hay imagen, ponemos la sin imagen
+        var updateEstudiante = state.value.estudiante.toModel().copy(imagen = fileNameTemp.toString()) // Copiamos el estado a modelo
         return updateEstudiante.validate().andThen {
             // Tenemos dos opciones, que no haya imagen o que si
             updateEstudianteTemp.fileImage?.let { newFileImage ->
@@ -168,7 +179,7 @@ class FormularioViewModel (
                     }
                 } else {
                     // Si tiene imagen, la actuliazamos con la nueva, peor hay que borrar la antigua por si cambia
-                    storage.updateImage(fileNameTemp, newFileImage)
+                    storage.updateImage(fileNameTemp.toString(), newFileImage)
                 }
             }
             service.save(updateEstudiante).onSuccess {
@@ -187,7 +198,7 @@ class FormularioViewModel (
     fun eliminarEstudiante(): Result<Unit, EstudianteError> {
         logger.debug { "Eliminando Estudiante" }
         // Hay que eliminar su imagen
-        val estudiante = state.value.estudiantes.copy()
+        val estudiante = state.value.estudiante.copy()
         // Para evitar que cambie en la selección
         val myId = estudiante.numero.toLong()
 
@@ -202,7 +213,7 @@ class FormularioViewModel (
         service.deleteById(myId)
         // Actualizamos la lista
         state.value = state.value.copy(
-            estudiante = state.value.estudiantes.toMutableList().apply { this.removeIf { it.id == myId } }
+            estudiantes = state.value.estudiantes.toMutableList().apply { this.removeIf { it.id == myId } }
         )
         updateActualState()
         return Ok(Unit)
@@ -214,9 +225,9 @@ class FormularioViewModel (
         logger.debug { "Actualizando Imagen: $fileImage" }
         // Actualizamos la imagen
         state.value = state.value.copy(
-            estudiante = state.value.estudiantes.copy(
-                imagen = Imagen(fileImage.toURI().toString()),
-                filtrada = fileImage,
+            estudiante = state.value.estudiante.copy(
+                imagen = Image(fileImage.toURI().toString()),
+                fileImage = fileImage,
                 oldFIleImage = state.value.estudiante.fileImage // Guardamos la antigua por si hay que cambiar al editar y actuliazar la imagen
             )
         )
@@ -248,7 +259,7 @@ class FormularioViewModel (
 
     fun changeEstudianteOperacion(newValue: TipoOperacion) {
         logger.debug { "Cambiando tipo de operación: $newValue" }
-        if (newValue == TipoOperacion.Editar) {
+        if (newValue == TipoOperacion.EDITAR) {
             logger.debug { "Copiando estado de Estudiante Seleeccionado a Operacion" }
             state.value = state.value.copy(
                 estudiante = state.value.estudiante.copy(),
@@ -271,7 +282,7 @@ class FormularioViewModel (
         fechaNacimiento: LocalDate,
         calificacion: String,
         isRepetidor: Boolean,
-        imageEstudiante: Estudiante
+        imageEstudiante: Image
     ) {
         logger.debug { "Actualizando estado de Estudiante Operacion" }
         state.value = state.value.copy(
@@ -281,7 +292,7 @@ class FormularioViewModel (
                 email = email,
                 fechaNacimiento = fechaNacimiento,
                 calificacion = calificacion,
-                isRepetidor = isRepetidor,
+                repetidor = isRepetidor,
                 imagen = imageEstudiante
                 // fileImage = fileimage // No se actualiza aqui, se actualiza en el método de la imagen
             )
@@ -328,8 +339,8 @@ class FormularioViewModel (
         val email: String = "",
         val fechaNacimiento: LocalDate = LocalDate.now(),
         val calificacion: String = "",
-        val isRepetidor: Boolean = false,
-        val imagen: Image = Image(RoutesManager.getResourcesAsStream("image/NoEnconrado.png")),
+        val repetidor: Boolean = false,
+        val imagen: Image = Image(RoutesManager.getResourcesAsStram("image/NoEnconrado.png")),
         val fileImage: File? = null,
         val oldFIleImage: File? = null, // Para controlar si se ha cambiado la imagen y borrarla
     )

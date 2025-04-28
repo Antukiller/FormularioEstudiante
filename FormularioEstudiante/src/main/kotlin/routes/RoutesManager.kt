@@ -3,20 +3,18 @@ package routes
 import javafx.application.Application
 import javafx.application.Platform
 import javafx.fxml.FXMLLoader
-import javafx.scene.Parent
 import javafx.scene.Scene
 import javafx.scene.control.Alert
 import javafx.scene.control.ButtonType
+import javafx.scene.image.Image
 import javafx.scene.layout.Pane
 import javafx.stage.Modality
 import javafx.stage.Stage
 import javafx.stage.WindowEvent
-import jdk.internal.loader.Resource
 import org.lighthousegames.logging.logging
 import java.io.InputStream
 import java.net.URL
 import java.util.*
-import javax.sound.midi.SoundbankResource
 import kotlin.collections.HashMap
 
 private val logger = logging()

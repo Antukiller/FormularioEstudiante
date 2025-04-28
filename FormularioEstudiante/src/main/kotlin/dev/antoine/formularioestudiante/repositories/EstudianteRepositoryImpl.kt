@@ -12,9 +12,11 @@ private val logger = logging()
 class EstudianteRepositoryImpl(
     private val dao: EstudianteDao
 ): EstudianteRepository  {
+
+
     override fun findAll(): List<Estudiante> {
         logger.debug { "Find all" }
-        return dao.selectAll().toModel()
+        return dao.selectAll()
     }
 
     override fun findById(id: Long): Estudiante? {

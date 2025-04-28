@@ -1,5 +1,7 @@
 package dev.antoine.formularioestudiante.mappers
 
+
+import dev.antoine.formularioestudiante.ViewModel.FormularioViewModel
 import dev.antoine.formularioestudiante.alumnado.models.Estudiante
 import dev.antoine.formularioestudiante.dao.EstudianteEntity
 import dev.antoine.formularioestudiante.dto.EstudianteDto
@@ -21,12 +23,10 @@ fun EstudianteDto.toModel(): Estudiante {
     )
 }
 
-@JvmName("dtoToModelList")
+@JvmName("dtoToModellist") // Para evitar conflictos cpn el nombre de la función
 fun List<EstudianteDto>.toModel(): List<Estudiante> {
     return map { it.toModel() }
 }
-
-
 
 
 fun Estudiante.toDto(): EstudianteDto {
@@ -64,10 +64,11 @@ fun EstudianteEntity.toModel(): Estudiante {
     )
 }
 
-@JvmName("entityToModelLis")
-fun List<Estudiante>.toModel(): List<Estudiante> {
+@JvmName("entityToModelList")
+fun List<EstudianteEntity>.toModel(): List<Estudiante> {
     return this.map { it.toModel() }
 }
+
 
 fun Estudiante.toEntity(): EstudianteEntity {
     return EstudianteEntity(
@@ -90,7 +91,7 @@ fun List<Estudiante>.toEntity(): List<EstudianteEntity> {
 }
 
 
-fun EstudianteState.toModel(): Estudiante {
+fun FormularioViewModel.EstudianteState.toModel(): Estudiante {
     return Estudiante(
         id = if (numero.trim().isBlank()) Estudiante.NEW_ESTUDIANTE else numero.toLong(),
         apellidos = apellidos.trim(),
@@ -98,7 +99,7 @@ fun EstudianteState.toModel(): Estudiante {
         email = email.trim(),
         fechaNacimiento = fechaNacimiento,
         calificacion = calificacion.trim().replace(",",".").toDouble(),
-        repetidor = repetidor.trim(),
+        repetidor = repetidor,
         imagen = imagen.url ?: "NoEncontrado.png"
     )
 }
