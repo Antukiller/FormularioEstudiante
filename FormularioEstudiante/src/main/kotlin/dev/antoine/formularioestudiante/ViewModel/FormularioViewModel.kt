@@ -149,7 +149,7 @@ class FormularioViewModel (
 
 
     // Edita un estudiante en el estado y repositorio
-    
+
     fun editarEstudiante(): Result<Estudiante, EstudianteError> {
         logger.debug { "Editando Estudiante" }
         // Actualizamos el estuiante, atención a la imagen
