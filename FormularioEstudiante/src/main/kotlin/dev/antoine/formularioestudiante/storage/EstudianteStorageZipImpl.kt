@@ -95,7 +95,7 @@ class EstudianteStorageZipImpl(
                     )
                 }
             }
-            // tomamos el fichero data.json y lo parseamos a una lista de alumnos
+            // tomamos el fichero data.json y lo parseamos a una lista de Estudiantes
             val data = storageJson.loadDataJson(File("$tempDir/data.json"))
             tempDir.toFile().deleteRecursively()
             return data

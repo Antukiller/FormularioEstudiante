@@ -48,7 +48,7 @@ class EstudianteRepositoryImpl(
         val toUpdate = estudiante.copy(updatedAt = timeStamp)
         val res = dao.update(toUpdate.toEntity())
         logger.debug { "Nuestra consulta de actulizacion ha vuelto: $res" }
-        logger.debug { "Alumno eliminado con id: $toUpdate" }
+        logger.debug { "Estudiante eliminado con id: $toUpdate" }
         return toUpdate
     }
 
@@ -56,7 +56,7 @@ class EstudianteRepositoryImpl(
         logger.debug { "DeleteById: $id" }
         val res = dao.delete(id)
         logger.debug { "Nuestra consulta de borrado ha devuelto: $res" }
-        logger.debug { "Alumno eliminado con id: $id" }
+        logger.debug { "Estudiante eliminado con id: $id" }
     }
 
     override fun deleteAll() {

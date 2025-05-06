@@ -1,5 +1,6 @@
 package dev.antoine.formularioestudiante
 
+import di.appModule
 import javafx.application.Application
 import javafx.stage.Stage
 import org.koin.core.component.KoinComponent

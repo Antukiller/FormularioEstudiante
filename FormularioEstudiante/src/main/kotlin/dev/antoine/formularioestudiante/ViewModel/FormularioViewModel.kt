@@ -38,9 +38,9 @@ class FormularioViewModel (
     }
 
     private fun loadAllEstudiantes() {
-        logger.debug { "Cargando alumnos del repositrio" }
+        logger.debug { "Cargando Estudiantes del repositrio" }
         service.findAll().onSuccess {
-            logger.debug { "Cargando alumnos del repositorio: ${it.size}" }
+            logger.debug { "Cargando Estudiantes del repositorio: ${it.size}" }
             state.value = state.value.copy(estudiantes = it)
             updateActualState()
         }
@@ -60,10 +60,10 @@ class FormularioViewModel (
     }
 
 
-    // Filtra la lista de alumnos en el estado en función del tipo y el nombbre completo
+    // Filtra la lista de Estudiantes en el estado en función del tipo y el nombbre completo
 
     fun esttudiantesFilteredList(tipo: String, nombreCompleto: String): List<Estudiante> {
-        logger.debug { "Filtrando lista de Alumnos: $tipo, $nombreCompleto" }
+        logger.debug { "Filtrando lista de Estudiantes: $tipo, $nombreCompleto" }
 
         return state.value.estudiantes
             .filter { estudiante ->
@@ -104,7 +104,7 @@ class FormularioViewModel (
     }
 
 
-    // carga en el estado el alumno seleccionado
+    // carga en el estado el Estudiante seleccionado
     fun updateEstudiantesSeleccionados (estudiante: Estudiante) {
         logger.debug { "Actuliazando estado de estudiante: $estudiante" }
 
@@ -135,7 +135,7 @@ class FormularioViewModel (
     }
 
 
-    // Crea un nuevo alumno en el estado y repositorio
+    // Crea un nuevo Estudiante en el estado y repositorio
     fun crearEstudiante(): Result<Estudiante, EstudianteError> {
         logger.debug { "Creando Estudiante" }
         val newEstudianteTemp = state.value.estudiante.copy()
@@ -194,7 +194,7 @@ class FormularioViewModel (
         }
     }
 
-    // Elimina un alumno en el estado y en el repositorio
+    // Elimina un Estudiante en el estado y en el repositorio
     fun eliminarEstudiante(): Result<Unit, EstudianteError> {
         logger.debug { "Eliminando Estudiante" }
         // Hay que eliminar su imagen
@@ -326,7 +326,7 @@ class FormularioViewModel (
         val notaMedia: String = "0.0",
 
         // siempre cambia el tipo de operacion, se actualiza el estudiante
-        val estudiante: EstudianteState = EstudianteState(), // Estado del alumno seleccionado
+        val estudiante: EstudianteState = EstudianteState(), // Estado del Estudiante seleccionado
 
         val tipoOperacion: TipoOperacion = TipoOperacion.NUEVO,
     )

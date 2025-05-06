@@ -7,7 +7,7 @@ import java.util.*
 
 private val logger = logging()
 
-private const val CONFIG_FILE_NAME = "application.properties"
+private const val CONFIG_FILE_NAME = "aplication.properties"
 
 /**
  * Voy a poner todo lazy para que vaya leyendo las propiedades a medida que se necesiten

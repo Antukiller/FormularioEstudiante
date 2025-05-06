@@ -12,6 +12,7 @@ class AcercaDeViewController {
     private lateinit var linkGitHub: javafx.scene.control.Hyperlink
 
     // Inicializamos
+    @FXML
     fun initialize() {
         logger.debug { "Inicializamos AcercaDeViewController FXML" }
         linkGitHub.setOnAction {

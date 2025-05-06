@@ -49,25 +49,25 @@ module dev.antoine.formularioestudiante {
 
     // Alumnado
     // Controllers
-    opens dev.antoine.formularioestudiante.alumnado.controllers to javafx.fxml;
-    exports dev.antoine.formularioestudiante.alumnado.controllers;
+    opens dev.antoine.formularioestudiante.estudiante.controllers to javafx.fxml;
+    exports dev.antoine.formularioestudiante.estudiante.controllers;
 
     // dtos
-    opens dev.antoine.formularioestudiante.alumnado.dto.json to javafx.fxml;
-    exports dev.antoine.formularioestudiante.alumnado.dto.json;
+    opens dev.antoine.formularioestudiante.estudiante.dto.json to javafx.fxml;
+    exports dev.antoine.formularioestudiante.estudiante.dto.json;
 
     // Modelos a javafx para poder usarlos en las vistas
-    opens dev.antoine.formularioestudiante.alumnado.models to javafx.fxml;
-    exports dev.antoine.formularioestudiante.alumnado.models;
+    opens dev.antoine.formularioestudiante.estudiante.models to javafx.fxml;
+    exports dev.antoine.formularioestudiante.estudiante.models;
 
     // Dao
-    opens dev.antoine.formularioestudiante.alumnado.dao to javafx.fxml;
-    exports dev.antoine.formularioestudiante.alumnado.dao;
+    opens dev.antoine.formularioestudiante.estudiante.dao to javafx.fxml;
+    exports dev.antoine.formularioestudiante.estudiante.dao;
 
     // Acerca de
     // Controllers
-    opens dev.antoine.formularioestudiante.acercade.controllers to javafx.fxml;
-    exports dev.antoine.formularioestudiante.acercade.controllers;
+    opens dev.antoine.formularioestudiante.acercade to javafx.fxml;
+    exports dev.antoine.formularioestudiante.acercade;
 
     // Tests kotlin standard library to jupiter.api
     // Para poder usar las librerias de test de kotlin
