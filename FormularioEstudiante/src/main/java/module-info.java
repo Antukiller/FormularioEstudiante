@@ -47,6 +47,7 @@ module dev.antoine.formularioestudiante {
     exports dev.antoine.formularioestudiante.routes;
 
 
+
     // Alumnado
     // Controllers
     opens dev.antoine.formularioestudiante.estudiante.controllers to javafx.fxml;
@@ -61,8 +62,8 @@ module dev.antoine.formularioestudiante {
     exports dev.antoine.formularioestudiante.estudiante.models;
 
     // Dao
-    opens dev.antoine.formularioestudiante.estudiante.dao to javafx.fxml;
-    exports dev.antoine.formularioestudiante.estudiante.dao;
+   opens dev.antoine.formularioestudiante.estudiante.dao to javafx.fxml;
+   exports dev.antoine.formularioestudiante.estudiante.dao;
 
     // Acerca de
     // Controllers

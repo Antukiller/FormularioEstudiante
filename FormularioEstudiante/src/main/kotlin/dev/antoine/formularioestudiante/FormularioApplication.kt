@@ -1,11 +1,11 @@
 package dev.antoine.formularioestudiante
 
-import di.appModule
+import dev.antoine.formularioestudiante.di.appModule
 import javafx.application.Application
 import javafx.stage.Stage
 import org.koin.core.component.KoinComponent
 import org.koin.core.context.startKoin
-import routes.RoutesManager
+import dev.antoine.formularioestudiante.routes.RoutesManager
 import java.time.LocalDateTime
 
 class FormularioApplication : Application(), KoinComponent {
