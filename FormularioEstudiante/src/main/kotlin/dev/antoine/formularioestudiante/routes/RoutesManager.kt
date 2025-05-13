@@ -40,7 +40,7 @@ object RoutesManager {
     enum class View(val fxml: String) {
         MAIN("views/estudiante/formulario-view.fxml"),
         DETAILS("views/estudiante/details-view.fxml"),
-        ACERCA_DE("views/acerca-de-view.fxml"),
+        ACERCA_DE("views/acerca-de/acerca-view.fxml"),
     }
 
     init {
@@ -59,7 +59,7 @@ object RoutesManager {
     fun initMaainStage(stage: Stage) {
         logger.debug { "Inicializando MainStage" }
 
-        val fxmlLoader = FXMLLoader(javaClass.getResource("View.Main.fxml"))
+        val fxmlLoader = FXMLLoader(javaClass.getResource(View.MAIN.fxml))
         val parentRoot = fxmlLoader.load<Pane>()
         val scene = Scene(parentRoot, 680.0, 400.0)
         // scene.stylesheets.add(getResources(Style.DAM.css).toExternalForm())
@@ -79,7 +79,7 @@ object RoutesManager {
 
     fun initAcercaDeStage() {
         logger.debug { "Inicializando AcercaDeStage" }
-        val fxmlLoader = FXMLLoader(getResource("View.ACERCA_DE.fxml"))
+        val fxmlLoader = FXMLLoader(getResource(View.ACERCA_DE.fxml))
         val parentRoot = fxmlLoader.load<Pane>()
         val scene = Scene(parentRoot, 395.0, 155.0)
         val stage = Stage()
@@ -95,7 +95,7 @@ object RoutesManager {
     // Abrimos one como una nueva ventana
     fun initDetalle() {
         logger.debug { "Inicializando Detalle" }
-        val fxmlLoader = FXMLLoader(getResource("View.DETAILS.fxml"))
+        val fxmlLoader = FXMLLoader(getResource(View.DETAILS.fxml))
         val parentRoot = fxmlLoader.load<Pane>()
         val scene = Scene(parentRoot, 350.0, 400.0)
         val stage = Stage()

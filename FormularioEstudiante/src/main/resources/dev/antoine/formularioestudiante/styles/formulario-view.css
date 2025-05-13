@@ -1,0 +1,82 @@
+.root {
+    -fx-background-color: #080C1D; /* Fondo oscuro */
+    -fx-font-family: "Orbitron", sans-serif;
+    -fx-font-size: 14px;
+    -fx-text-fill: #001F3F; /* Azul oscuro */
+}
+
+.menu-bar {
+    -fx-background-color: #8000FF; /* Púrpura neón */
+    -fx-text-fill: white;
+}
+
+.menu {
+    -fx-background-color: #1E003A;
+    -fx-text-fill: white;
+}
+
+.menu-item {
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-color: #FF0080;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+}
+
+.button:hover {
+    -fx-background-color: #CC0066;
+}
+
+.table-view {
+    -fx-background-color: #141F35;
+    -fx-border-color: #00FFFF;
+    -fx-border-width: 2px;
+}
+
+.table-column {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.label {
+    -fx-text-fill: #001F3F; /* Azul oscuro */
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow( gaussian, #00FFFF, 3, 0.5, 1, 1 ); /* Sombra azul neón */
+}
+
+.text-field {
+    -fx-background-color: #141F35;
+    -fx-border-color: #00FFFF;
+    -fx-border-width: 2px;
+    -fx-text-fill: #001F3F;
+    -fx-effect: dropshadow( gaussian, #00FFFF, 3, 0.5, 1, 1 );
+}
+
+.combo-box {
+    -fx-background-color: #141F35;
+    -fx-border-color: #00FFFF;
+    -fx-border-width: 2px;
+    -fx-text-fill: #001F3F;
+    -fx-effect: dropshadow( gaussian, #00FFFF, 3, 0.5, 1, 1 );
+}
+
+.date-picker {
+    -fx-background-color: #141F35;
+    -fx-border-color: #00FFFF;
+    -fx-border-width: 2px;
+    -fx-text-fill: #001F3F;
+    -fx-effect: dropshadow( gaussian, #00FFFF, 3, 0.5, 1, 1 );
+}
+
+.check-box {
+    -fx-text-fill: #001F3F;
+    -fx-effect: dropshadow( gaussian, #00FFFF, 3, 0.5, 1, 1 );
+}
+
+.anchor-pane {
+    -fx-border-color: #FF0080;
+    -fx-border-width: 3px;
+}

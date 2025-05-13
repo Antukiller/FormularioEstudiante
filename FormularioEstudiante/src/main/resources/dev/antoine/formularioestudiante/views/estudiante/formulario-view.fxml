@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="680.0" stylesheets="@../../styles/formulario-view.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda" />
+        </menus>
+      </MenuBar>
+      <AnchorPane prefHeight="415.0" prefWidth="680.0">
+         <children>
+            <SplitPane dividerPositions="0.5" prefHeight="415.0" prefWidth="680.0">
+               <items>
+                  <AnchorPane prefHeight="413.0" prefWidth="317.0">
+                     <children>
+                        <VBox prefHeight="413.0" prefWidth="335.0">
+                           <children>
+                              <HBox prefHeight="33.0" prefWidth="335.0">
+                                 <children>
+                                    <Label prefHeight="31.0" prefWidth="61.0" text="Nombre:">
+                                       <HBox.margin>
+                                          <Insets left="12.0" top="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField alignment="CENTER" prefHeight="25.0" prefWidth="120.0">
+                                       <HBox.margin>
+                                          <Insets left="3.0" top="4.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <ComboBox prefHeight="25.0" prefWidth="120.0">
+                                       <HBox.margin>
+                                          <Insets bottom="2.0" left="5.0" top="4.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                 </children>
+                              </HBox>
+                              <TableView prefHeight="339.0" prefWidth="335.0">
+                                <columns>
+                                  <TableColumn prefWidth="77.3333078622818" text="Numero" />
+                                  <TableColumn prefWidth="157.33338928222656" text="Nombre" />
+                                    <TableColumn minWidth="0.0" prefWidth="101.99996948242188" text="Calificacion" />
+                                </columns>
+                              </TableView>
+                              <HBox prefHeight="43.0" prefWidth="335.0">
+                                 <children>
+                                    <Label prefHeight="20.0" prefWidth="69.0" text="Num Apr:">
+                                       <HBox.margin>
+                                          <Insets left="13.0" top="12.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField prefHeight="33.0" prefWidth="70.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Label prefHeight="20.0" prefWidth="83.0" text="Nota Media:">
+                                       <HBox.margin>
+                                          <Insets left="10.0" top="12.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField prefHeight="33.0" prefWidth="69.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="41.0" prefHeight="43.0" prefWidth="170.0" text="Ficha de Estudiante">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="99.0" fitWidth="131.0" layoutX="191.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/sin-imagen.png" />
+                           </image>
+                        </ImageView>
+                        <GridPane layoutX="37.0" layoutY="130.0" prefHeight="239.0" prefWidth="272.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.33331298828125" minWidth="10.0" prefWidth="88.66661834716797" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.33338165283203" minWidth="10.0" prefWidth="167.33338165283203" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Numero:" />
+                              <Label text="Apellidos:" GridPane.rowIndex="1" />
+                              <Label text="Nombre:" GridPane.rowIndex="2" />
+                              <Label text="E-Mail:" GridPane.rowIndex="3" />
+                              <Label text="Fecha Nac:" GridPane.rowIndex="4" />
+                              <Label text="Calificacion:" GridPane.rowIndex="5" />
+                              <Label text="Repetidor:" GridPane.rowIndex="6" />
+                              <TextField GridPane.columnIndex="1" />
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <CheckBox mnemonicParsing="false" text="Si" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                           </children>
+                        </GridPane>
+                        <HBox layoutX="1.0" layoutY="369.0" prefHeight="43.0" prefWidth="336.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="97.0" text="Nuevo">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../icons/new.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="7.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" text="Editar">
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="7.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../icons/edit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="103.0" text="Eliminar">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="15.0" top="7.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../icons/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
