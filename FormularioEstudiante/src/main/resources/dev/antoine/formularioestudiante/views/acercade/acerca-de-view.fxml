@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="203.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.antoine.formularioestudiante.acercade.AcercaDeViewController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="170.0" layoutX="34.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/app-icon.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="244.0" layoutY="27.0" prefHeight="37.0" prefWidth="316.0" text="Formularios DAW" textAlignment="CENTER">
+         <font>
+            <Font name="FiraCode Nerd Font Ret" size="32.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="269.0" layoutY="70.0" prefHeight="37.0" prefWidth="265.0" text="Programacion 1ºDAW">
+         <font>
+            <Font name="Bodoni MT" size="25.0" />
+         </font>
+      </Label>
+      <Hyperlink alignment="CENTER" layoutX="364.0" layoutY="117.0" prefHeight="32.0" prefWidth="105.0" text="Github">
+         <font>
+            <Font name="Calisto MT" size="27.0" />
+         </font>
+      </Hyperlink>
+      <ImageView fitHeight="43.0" fitWidth="35.0" layoutX="316.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/github.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

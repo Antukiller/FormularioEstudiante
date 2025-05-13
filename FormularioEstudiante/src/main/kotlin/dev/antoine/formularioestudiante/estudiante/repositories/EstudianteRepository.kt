@@ -1,4 +1,4 @@
-package dev.antoine.formularioestudiante.estudiante.models.repositories
+package dev.antoine.formularioestudiante.estudiante.repositories
 
 import dev.antoine.formularioestudiante.estudiante.models.Estudiante
 

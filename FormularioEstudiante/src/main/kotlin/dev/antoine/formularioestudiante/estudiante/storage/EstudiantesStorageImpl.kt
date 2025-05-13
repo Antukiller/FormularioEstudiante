@@ -1,9 +1,10 @@
-package dev.antoine.formularioestudiante.estudiante.models.storage
+package dev.antoine.formularioestudiante.estudiante.storage
 
 import com.github.michaelbull.result.Result
 import dev.antoine.formularioestudiante.config.AppConfig
 import dev.antoine.formularioestudiante.estudiante.models.Estudiante
-import dev.antoine.formularioestudiante.estudiante.models.errors.EstudianteError
+import dev.antoine.formularioestudiante.estudiante.errors.EstudianteError
+import dev.antoine.formularioestudiante.estudiante.models.storage.EstudianteStorage
 import org.lighthousegames.logging.logging
 import java.io.File
 import java.nio.file.Files

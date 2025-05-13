@@ -1,11 +1,10 @@
-package dev.antoine.formularioestudiante.estudiante.models.controllers
+package dev.antoine.formularioestudiante.estudiante.controllers
 
-import com.github.michaelbull.result.Err
-import com.github.michaelbull.result.Ok
-import com.github.michaelbull.result.Result
-import com.github.michaelbull.result.andThen
-import dev.antoine.formularioestudiante.estudiante.models.ViewModel.FormularioViewModel
-import dev.antoine.formularioestudiante.estudiante.models.errors.EstudianteError
+import com.github.michaelbull.result.*
+import dev.antoine.formularioestudiante.estudiante.viewmodels.FormularioViewModel
+import dev.antoine.formularioestudiante.estudiante.errors.EstudianteError
+import dev.antoine.formularioestudiante.estudiante.viewmodels.FormularioViewModel.TipoOperacion.EDITAR
+import dev.antoine.formularioestudiante.estudiante.viewmodels.FormularioViewModel.TipoOperacion.NUEVO
 import javafx.fxml.FXML
 import javafx.scene.control.Alert
 import javafx.scene.control.Alert.AlertType
@@ -159,15 +158,29 @@ class DetalleViewController : KoinComponent {
             )
 
             when (viewModel.state.value.tipoOperacion) {
-                FormularioViewModel.TipoOperacion.NUEVO -> {
+                NUEVO -> {
                     viewModel.crearEstudiante()
                 }
 
-                FormularioViewModel.TipoOperacion.EDITAR -> {
+                EDITAR -> {
                     viewModel.editarEstudiante()
                 }
             }
-
+        }.onSuccess {
+            logger.debug { "Estudiante salvado correctamente" }
+            showAlertOperacion(
+                Alert.AlertType.INFORMATION,
+                "Estudiante salvado",
+                "Estudiante salvado correctamente:\n${it.nombreCompleto}"
+            )
+            cerrarVentana()
+        }.onFailure {
+            logger.error { "Error al salvado estudiante:${it.message}" }
+            showAlertOperacion(
+                Alert.AlertType.ERROR,
+                "Error al salvar estudiante",
+                "Se ha producido un error al salvar el estudiante:\n${it.message}"
+            )
         }
     }
 
@@ -194,7 +207,7 @@ class DetalleViewController : KoinComponent {
         dateEstudianteFechaNacimiento.value = null
         textEstudianteCalificacion.clear()
         checkEstudianteRepetidor.isSelected = false
-        imageEstudiante.image = Image(RoutesManager.getResourcesAsStram("images/NoEncontrado.png"))
+        imageEstudiante.image = Image(RoutesManager.getResourcesAsStram("images/sin-imagen.png"))
     }
 
 

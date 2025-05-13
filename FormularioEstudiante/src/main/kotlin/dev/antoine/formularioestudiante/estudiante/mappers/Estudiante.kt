@@ -1,10 +1,10 @@
-package dev.antoine.formularioestudiante.estudiante.models.mappers
+package dev.antoine.formularioestudiante.estudiante.mappers
 
 
-import dev.antoine.formularioestudiante.estudiante.models.ViewModel.FormularioViewModel
+import dev.antoine.formularioestudiante.estudiante.viewmodels.FormularioViewModel
 import dev.antoine.formularioestudiante.estudiante.models.Estudiante
 import dev.antoine.formularioestudiante.estudiante.models.dao.EstudianteEntity
-import dev.antoine.formularioestudiante.estudiante.models.dto.EstudianteDto
+import dev.antoine.formularioestudiante.estudiante.dto.EstudianteDto
 import java.time.LocalDate
 import java.time.LocalDateTime
 

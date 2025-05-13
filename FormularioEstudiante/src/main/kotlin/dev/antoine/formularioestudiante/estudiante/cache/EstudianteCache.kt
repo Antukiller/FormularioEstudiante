@@ -1,4 +1,4 @@
-package dev.antoine.formularioestudiante.estudiante.models.cache
+package dev.antoine.formularioestudiante.estudiante.cache
 
 import com.github.benmanes.caffeine.cache.Cache
 import com.github.benmanes.caffeine.cache.Caffeine

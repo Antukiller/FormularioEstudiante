@@ -1,10 +1,10 @@
-package dev.antoine.formularioestudiante.estudiante.models.ViewModel
+package dev.antoine.formularioestudiante.estudiante.viewmodels
 
 import com.github.michaelbull.result.*
 import dev.antoine.formularioestudiante.estudiante.models.Estudiante
-import dev.antoine.formularioestudiante.estudiante.models.errors.EstudianteError
-import dev.antoine.formularioestudiante.estudiante.models.mappers.toModel
-import dev.antoine.formularioestudiante.estudiante.models.service.EstudianteService
+import dev.antoine.formularioestudiante.estudiante.errors.EstudianteError
+import dev.antoine.formularioestudiante.estudiante.mappers.toModel
+import dev.antoine.formularioestudiante.estudiante.service.EstudianteService
 import dev.antoine.formularioestudiante.estudiante.models.storage.EstudianteStorage
 import dev.antoine.formularioestudiante.estudiante.models.validators.validate
 import javafx.beans.property.SimpleObjectProperty
@@ -110,8 +110,8 @@ class FormularioViewModel (
 
 
         // Datos de la imagen
-        var imagen = Image(RoutesManager.getResourcesAsStram("images/NoEcontrado.png"))
-        var fileImage = File(RoutesManager.getResource("images/NoEcontrado.png").toURI())
+        var imagen = Image(RoutesManager.getResourcesAsStram("images/sin-imagen.png"))
+        var fileImage = File(RoutesManager.getResource("images/sin-imagen.png").toURI())
 
         storage.loadImage(estudiante.imagen).onSuccess {
             imagen = Image(it.absoluteFile.toURI().toString())

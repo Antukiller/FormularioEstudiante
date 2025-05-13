@@ -6,7 +6,6 @@ import org.jdbi.v3.core.kotlin.KotlinPlugin
 import org.jdbi.v3.core.statement.SqlLogger
 import org.jdbi.v3.core.statement.StatementContext
 import org.jdbi.v3.sqlobject.SqlObjectPlugin
-import org.koin.java.KoinJavaComponent.inject
 import org.lighthousegames.logging.logging
 import java.io.File
 import java.time.temporal.ChronoUnit

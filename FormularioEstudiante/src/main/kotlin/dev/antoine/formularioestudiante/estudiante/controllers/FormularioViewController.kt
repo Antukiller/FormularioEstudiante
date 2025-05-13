@@ -1,9 +1,10 @@
-package dev.antoine.formularioestudiante.estudiante.models.controllers
+package dev.antoine.formularioestudiante.estudiante.controllers
 
 import com.github.michaelbull.result.onFailure
 import com.github.michaelbull.result.onSuccess
-import dev.antoine.formularioestudiante.estudiante.models.ViewModel.FormularioViewModel
+import dev.antoine.formularioestudiante.estudiante.viewmodels.FormularioViewModel
 import dev.antoine.formularioestudiante.estudiante.models.Estudiante
+import dev.antoine.formularioestudiante.estudiante.viewmodels.FormularioViewModel.TipoOperacion
 import javafx.collections.FXCollections
 import javafx.fxml.FXML
 import javafx.scene.Cursor.DEFAULT
@@ -155,6 +156,10 @@ class FormularioViewController : KoinComponent {
             }
         }
 
+        // Para que no se vea desactivado mucho, que queda feo!!
+        dateEstudianteFechaNacimiento.style = "-fx-opacity: 1"
+        dateEstudianteFechaNacimiento.editor.style = "-fx-opacity: 1"
+        checkEstudianteRepetidor.style = "-fx-opacity: 1"
 
     }
 

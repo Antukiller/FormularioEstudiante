@@ -1,4 +1,4 @@
-package dev.antoine.formularioestudiante.estudiante.models.dto
+package dev.antoine.formularioestudiante.estudiante.dto
 
 import kotlinx.serialization.Serializable
 

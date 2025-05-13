@@ -48,14 +48,13 @@ module dev.antoine.formularioestudiante {
 
 
 
-    // Alumnado
+    // Estudiante
     // Controllers
     opens dev.antoine.formularioestudiante.estudiante.controllers to javafx.fxml;
-    exports dev.antoine.formularioestudiante.estudiante.controllers;
 
     // dtos
-    opens dev.antoine.formularioestudiante.estudiante.dto.json to javafx.fxml;
-    exports dev.antoine.formularioestudiante.estudiante.dto.json;
+    opens dev.antoine.formularioestudiante.estudiante.dto to javafx.fxml;
+    exports dev.antoine.formularioestudiante.estudiante.dto;
 
     // Modelos a javafx para poder usarlos en las vistas
     opens dev.antoine.formularioestudiante.estudiante.models to javafx.fxml;

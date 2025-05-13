@@ -1,4 +1,4 @@
-package dev.antoine.formularioestudiante.estudiante.models.errors
+package dev.antoine.formularioestudiante.estudiante.errors
 
 sealed class EstudianteError(val message: String) {
     class LoadJson(message: String) : EstudianteError(message)

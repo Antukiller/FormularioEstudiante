@@ -4,7 +4,7 @@ import com.github.michaelbull.result.Err
 import com.github.michaelbull.result.Ok
 import com.github.michaelbull.result.Result
 import dev.antoine.formularioestudiante.estudiante.models.Estudiante
-import dev.antoine.formularioestudiante.estudiante.models.errors.EstudianteError
+import dev.antoine.formularioestudiante.estudiante.errors.EstudianteError
 import java.time.LocalDate
 
 fun Estudiante.validate(): Result<Estudiante, EstudianteError> {

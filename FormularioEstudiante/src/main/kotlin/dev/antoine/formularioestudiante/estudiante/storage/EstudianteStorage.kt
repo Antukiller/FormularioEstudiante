@@ -1,7 +1,7 @@
 package dev.antoine.formularioestudiante.estudiante.models.storage
 
 import dev.antoine.formularioestudiante.estudiante.models.Estudiante
-import dev.antoine.formularioestudiante.estudiante.models.errors.EstudianteError
+import dev.antoine.formularioestudiante.estudiante.errors.EstudianteError
 import java.io.File
 import com.github.michaelbull.result.Result
 

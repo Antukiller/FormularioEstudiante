@@ -1,6 +1,7 @@
-package dev.antoine.formularioestudiante.estudiante.models.dao
+package dev.antoine.formularioestudiante.estudiante.dao
 
 import dev.antoine.formularioestudiante.estudiante.models.Estudiante
+import dev.antoine.formularioestudiante.estudiante.models.dao.EstudianteEntity
 import org.jdbi.v3.core.Jdbi
 import org.jdbi.v3.sqlobject.customizer.Bind
 import org.jdbi.v3.sqlobject.customizer.BindBean

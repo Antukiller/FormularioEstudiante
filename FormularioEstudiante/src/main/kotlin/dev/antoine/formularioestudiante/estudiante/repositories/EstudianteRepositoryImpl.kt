@@ -1,9 +1,9 @@
-package dev.antoine.formularioestudiante.estudiante.models.repositories
+package dev.antoine.formularioestudiante.estudiante.repositories
 
 import dev.antoine.formularioestudiante.estudiante.models.Estudiante
-import dev.antoine.formularioestudiante.estudiante.models.dao.EstudianteDao
-import dev.antoine.formularioestudiante.estudiante.models.mappers.toEntity
-import dev.antoine.formularioestudiante.estudiante.models.mappers.toModel
+import dev.antoine.formularioestudiante.estudiante.dao.EstudianteDao
+import dev.antoine.formularioestudiante.estudiante.mappers.toEntity
+import dev.antoine.formularioestudiante.estudiante.mappers.toModel
 import org.lighthousegames.logging.logging
 import java.time.LocalDateTime
 

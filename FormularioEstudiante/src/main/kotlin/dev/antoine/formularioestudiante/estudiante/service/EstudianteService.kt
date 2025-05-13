@@ -1,8 +1,8 @@
-package dev.antoine.formularioestudiante.estudiante.models.service
+package dev.antoine.formularioestudiante.estudiante.service
 
 import com.github.michaelbull.result.Result
 import dev.antoine.formularioestudiante.estudiante.models.Estudiante
-import dev.antoine.formularioestudiante.estudiante.models.errors.EstudianteError
+import dev.antoine.formularioestudiante.estudiante.errors.EstudianteError
 
 interface EstudianteService {
     fun findAll(): Result<List<Estudiante>, EstudianteError>

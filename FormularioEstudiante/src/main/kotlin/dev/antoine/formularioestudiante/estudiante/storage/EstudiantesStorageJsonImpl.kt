@@ -1,13 +1,13 @@
-package dev.antoine.formularioestudiante.estudiante.models.storage
+package dev.antoine.formularioestudiante.estudiante.storage
 
 import com.github.michaelbull.result.Err
 import com.github.michaelbull.result.Ok
 import com.github.michaelbull.result.Result
 import dev.antoine.formularioestudiante.estudiante.models.Estudiante
-import dev.antoine.formularioestudiante.estudiante.models.dto.EstudianteDto
-import dev.antoine.formularioestudiante.estudiante.models.errors.EstudianteError
-import dev.antoine.formularioestudiante.estudiante.models.mappers.toDto
-import dev.antoine.formularioestudiante.estudiante.models.mappers.toModel
+import dev.antoine.formularioestudiante.estudiante.dto.EstudianteDto
+import dev.antoine.formularioestudiante.estudiante.errors.EstudianteError
+import dev.antoine.formularioestudiante.estudiante.mappers.toDto
+import dev.antoine.formularioestudiante.estudiante.mappers.toModel
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.lighthousegames.logging.logging

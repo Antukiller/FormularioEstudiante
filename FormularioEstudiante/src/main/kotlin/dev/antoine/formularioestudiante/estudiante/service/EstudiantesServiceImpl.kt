@@ -1,12 +1,12 @@
-package dev.antoine.formularioestudiante.estudiante.models.service
+package dev.antoine.formularioestudiante.estudiante.service
 
 import com.github.benmanes.caffeine.cache.Cache
 import com.github.michaelbull.result.Err
 import com.github.michaelbull.result.Ok
 import com.github.michaelbull.result.Result
 import dev.antoine.formularioestudiante.estudiante.models.Estudiante
-import dev.antoine.formularioestudiante.estudiante.models.errors.EstudianteError
-import dev.antoine.formularioestudiante.estudiante.models.repositories.EstudianteRepository
+import dev.antoine.formularioestudiante.estudiante.errors.EstudianteError
+import dev.antoine.formularioestudiante.estudiante.repositories.EstudianteRepository
 import org.lighthousegames.logging.logging
 
 class EstudiantesServiceImpl(
