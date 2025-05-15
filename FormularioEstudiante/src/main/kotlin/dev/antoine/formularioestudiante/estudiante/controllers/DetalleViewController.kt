@@ -124,7 +124,7 @@ class DetalleViewController : KoinComponent {
         FileChooser().run {
             title = "Selecciona una imagen"
             extensionFilters.addAll(FileChooser.ExtensionFilter("Images", "*.png", "*.jpg", "*.jpeg"))
-            showOpenDialog(RoutesManager.activateStage)
+            showOpenDialog(RoutesManager.activeStage)
         }?.let {
             viewModel.updateImageEstudianteOperacion(it)
         }

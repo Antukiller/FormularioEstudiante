@@ -286,10 +286,10 @@ class FormularioViewController : KoinComponent {
         FileChooser().run {
             title = "Exportar Forlumario"
             extensionFilters.add(FileChooser.ExtensionFilter("JSON", "*.json"))
-            showSaveDialog(RoutesManager.activateStage)
+            showSaveDialog(RoutesManager.activeStage)
         }?.let {
             logger.debug { "onExportarAction: $it" }
-            RoutesManager.activateStage.scene.cursor = WAIT
+            RoutesManager.activeStage.scene.cursor = WAIT
 
             viewModel.saveEstudiantesToJson(it)
                 .onSuccess {
@@ -300,7 +300,7 @@ class FormularioViewController : KoinComponent {
                 }.onFailure { error ->
                     showAlertOperacion(alerta = AlertType.ERROR, "Error al exportar", mensaje = error.message)
                 }
-            RoutesManager.activateStage.scene.cursor = DEFAULT
+            RoutesManager.activeStage.scene.cursor = DEFAULT
         }
     }
 
@@ -316,7 +316,7 @@ class FormularioViewController : KoinComponent {
         FileChooser().run {
             title = "Importar expedientes"
             extensionFilters.add(FileChooser.ExtensionFilter("JSON", "*.json"))
-            showOpenDialog(RoutesManager.activateStage)
+            showOpenDialog(RoutesManager.activeStage)
         }?.let {
             logger.debug { "onAbrirAction: $it" }
             showAlertOperacion(
@@ -325,7 +325,7 @@ class FormularioViewController : KoinComponent {
                 "Importando datos Se sustituye la imagen por una imagen por defecto."
             )
             // Cambiar el cursor a espera
-            RoutesManager.activateStage.scene.cursor = WAIT
+            RoutesManager.activeStage.scene.cursor = WAIT
             viewModel.loadEstudianteFromJson(it)
                 .onSuccess {
                     showAlertOperacion(
@@ -335,7 +335,7 @@ class FormularioViewController : KoinComponent {
                 }.onFailure { error ->
                     showAlertOperacion(alerta = AlertType.ERROR, title = "Error al importar", mensaje = error.message)
                 }
-            RoutesManager.activateStage.scene.cursor = DEFAULT
+            RoutesManager.activeStage.scene.cursor = DEFAULT
         }
     }
 
@@ -355,7 +355,7 @@ class FormularioViewController : KoinComponent {
         FileChooser().run {
             title = "Importar desde Zip"
             extensionFilters.add(FileChooser.ExtensionFilter("ZIP", "*.zip"))
-            showOpenDialog(RoutesManager.activateStage)
+            showOpenDialog(RoutesManager.activeStage)
         }?.let {
             logger.debug { "onAbrirAction: $it" }
             showAlertOperacion(
@@ -364,7 +364,7 @@ class FormularioViewController : KoinComponent {
                 "Importando datos. Se sustituye la imagen por la imagen encontrada en el zip."
             )
             // Cambiar el cursor a espera
-            RoutesManager.activateStage.scene.cursor = WAIT
+            RoutesManager.activeStage.scene.cursor = WAIT
             viewModel.loadEstudianteFromZip(it)
                 .onSuccess {
                     showAlertOperacion(
@@ -374,7 +374,7 @@ class FormularioViewController : KoinComponent {
                 }.onFailure { error ->
                     showAlertOperacion(alerta = AlertType.ERROR, title = "Error al importar", mensaje = error.message)
                 }
-            RoutesManager.activateStage.scene.cursor = DEFAULT
+            RoutesManager.activeStage.scene.cursor = DEFAULT
         }
 
     }
@@ -384,11 +384,11 @@ class FormularioViewController : KoinComponent {
         FileChooser().run {
             title = "Exportar a Zip"
             extensionFilters.add(FileChooser.ExtensionFilter("ZIP", "*.zip"))
-            showSaveDialog(RoutesManager.activateStage)
+            showSaveDialog(RoutesManager.activeStage)
         }?.let {
             logger.debug { "onAbrirAction: $it" }
             // Cambiar el cursor a espera
-            RoutesManager.activateStage.scene.cursor = WAIT
+            RoutesManager.activeStage.scene.cursor = WAIT
             viewModel.exportToZip(it)
                 .onSuccess {
                     showAlertOperacion(
@@ -398,7 +398,7 @@ class FormularioViewController : KoinComponent {
                 }.onFailure { error ->
                     showAlertOperacion(alerta = AlertType.ERROR, title = "Error al exportar", mensaje = error.message)
                 }
-            RoutesManager.activateStage.scene.cursor = DEFAULT
+            RoutesManager.activeStage.scene.cursor = DEFAULT
         }
     }
 

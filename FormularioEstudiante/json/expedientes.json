@@ -7,7 +7,7 @@
     "fechaNacimiento": "1990-01-01",
     "calificacion": 7.5,
     "repetidor": false,
-    "imagen": "estudiante.jpeg"
+    "imagen": "1682763355431.png"
   },
   {
     "id": 3,
@@ -17,7 +17,7 @@
     "fechaNacimiento": "1990-03-03",
     "calificacion": 9.5,
     "repetidor": true,
-    "imagen": "estudiante2.jpeg"
+    "imagen": "1682763355433.png"
   },
   {
     "id": 2,
@@ -27,7 +27,7 @@
     "fechaNacimiento": "1991-02-02",
     "calificacion": 8.5,
     "repetidor": false,
-    "imagen": "estudiante3.jpeg"
+    "imagen": "1682763355432.png"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "fechaNacimiento": "1991-05-05",
     "calificacion": 2.5,
     "repetidor": true,
-    "imagen": "estudiante4.jpeg"
+    "imagen": "1682763355435.png"
   },
   {
     "id": 4,
@@ -57,6 +57,6 @@
     "fechaNacimiento": "1992-06-06",
     "calificacion": 3.5,
     "repetidor": false,
-    "imagen": "NoEncontrado.png"
+    "imagen": "sin-imagen.png"
   }
 ]

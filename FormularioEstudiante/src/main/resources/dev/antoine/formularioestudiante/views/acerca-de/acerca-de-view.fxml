@@ -7,30 +7,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="203.0" prefWidth="600.0" stylesheets="@../../styles/acercade.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.antoine.formularioestudiante.acercade.AcercaDeViewController">
+<AnchorPane prefHeight="155.0" prefWidth="390.0" stylesheets="@../../styles/acercade.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.antoine.formularioestudiante.acercade.AcercaDeViewController">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="170.0" layoutX="34.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="102.0" layoutX="48.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../icons/app-icon.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="244.0" layoutY="27.0" prefHeight="37.0" prefWidth="316.0" text="Formularios DAW" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="150.0" layoutY="21.0" prefHeight="37.0" prefWidth="316.0" text="Formularios DAW" textAlignment="CENTER">
          <font>
-            <Font name="FiraCode Nerd Font Ret" size="32.0" />
+            <Font name="Berlin Sans FB" size="47.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="269.0" layoutY="70.0" prefHeight="37.0" prefWidth="265.0" text="Programacion 1ºDAW">
+      <Label alignment="CENTER" layoutX="175.0" layoutY="51.0" prefHeight="37.0" prefWidth="265.0" text="Programacion 1ºDAW">
          <font>
             <Font name="Bodoni MT" size="25.0" />
          </font>
       </Label>
-      <Hyperlink alignment="CENTER" layoutX="364.0" layoutY="117.0" prefHeight="32.0" prefWidth="105.0" text="Github">
+      <Hyperlink fx:id="linkGitHub" alignment="CENTER" layoutX="298.0" layoutY="91.0" prefHeight="38.0" prefWidth="88.0" text="GitHub">
          <font>
             <Font name="Calisto MT" size="27.0" />
          </font>
       </Hyperlink>
-      <ImageView fitHeight="43.0" fitWidth="35.0" layoutX="316.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="43.0" fitWidth="35.0" layoutX="245.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../icons/github.png" />
          </image>

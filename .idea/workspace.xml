@@ -1,44 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="62144d09-d4f6-4081-89a4-0a3ee85af227" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/FormularioEstudiante.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FormularioEstudiante.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FormularioEstudiante/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/config/AppConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/config/AppConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/database/JdbiManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/database/JdbiManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/FormularioApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/FormularioApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/ViewModel/FormularioViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/ViewModel/FormularioViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/alumnado/models/Estudiante.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/models/Estudiante.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/cache/EstudianteCache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/cache/EstudianteCache.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/controllers/DetalleViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/controllers/DetalleViewController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/controllers/FormularioViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/controllers/FormularioViewController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/dao/EstudianteDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/dao/EstudianteDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/dao/EstudianteEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/dao/EstudianteEntity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/dto/EstudianteDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/dto/EstudianteDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/errors/EstudianteError.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/errors/EstudianteError.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/mappers/Estudiante.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/mappers/Estudiante.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/repositories/EstudianteRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/repositories/EstudianteRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/repositories/EstudianteRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/repositories/EstudianteRepositoryImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/service/EstudianteService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/service/EstudianteService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/service/EstudiantesServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/service/EstudiantesServiceImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/storage/EstudianteStorage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/storage/EstudianteStorage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/storage/EstudianteStorageImages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/storage/EstudianteStorageImages.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/storage/EstudianteStorageImagesImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/storage/EstudianteStorageImagesImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/storage/EstudianteStorageZipImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/storage/EstudianteStorageZipImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/storage/EstudiantesStorageImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/storage/EstudiantesStorageImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/storage/EstudiantesStorageJson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/storage/EstudiantesStorageJson.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/storage/EstudiantesStorageJsonImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/storage/EstudiantesStorageJsonImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/storage/EstudiantesStorageZip.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/storage/EstudiantesStorageZip.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/validators/EstudianteValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/validators/EstudianteValidator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/di/AppModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/locale/Locale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/locale/Locale.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/routes/RoutesManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/routes/RoutesManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/json/expedientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/json/expedientes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/controllers/DetalleViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/controllers/DetalleViewController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/controllers/FormularioViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/controllers/FormularioViewController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/routes/RoutesManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/routes/RoutesManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/resources/dev/antoine/formularioestudiante/views/acerca-de/acerca-de-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/resources/dev/antoine/formularioestudiante/views/acerca-de/acerca-de-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FormularioEstudiante" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FormularioEstudiante" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FormularioEstudiante" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,12 +83,18 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Gradle.FormularioEstudiante [run].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Antukiller/IdeaProjects/FormularioEstudiante&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -79,6 +102,57 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Antukiller\IdeaProjects\FormularioEstudiante\FormularioEstudiante\src\main\kotlin\dev\antoine\formularioestudiante\estudiante" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="FormularioEstudiante [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="FormularioEstudiante [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.FormularioEstudiante [run]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -101,6 +175,17 @@
       <workItem from="1746552457711" duration="34000" />
       <workItem from="1746552502886" duration="169000" />
       <workItem from="1746552684502" duration="20000" />
+      <workItem from="1747165169441" duration="55000" />
+      <workItem from="1747165279902" duration="1009000" />
+      <workItem from="1747166312997" duration="234000" />
+      <workItem from="1747166559316" duration="1389000" />
+      <workItem from="1747206162218" duration="6864000" />
+      <workItem from="1747232235412" duration="1341000" />
+      <workItem from="1747239683768" duration="7481000" />
+      <workItem from="1747306470389" duration="1888000" />
+      <workItem from="1747308387807" duration="1142000" />
+      <workItem from="1747315061917" duration="4969000" />
+      <workItem from="1747322451285" duration="450000" />
     </task>
     <servers />
   </component>

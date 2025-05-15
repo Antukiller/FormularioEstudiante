@@ -28,9 +28,9 @@ private val logger = logging()
 object RoutesManager {
     // Necesitamos siempre saber
     private lateinit var mainStage: Stage // Ventana principal
-    private lateinit var _activateStage: Stage // La ventana actual
-    val activateStage: Stage
-    get() = _activateStage
+    private lateinit var _activeStage: Stage // La ventana actual
+    val activeStage: Stage
+    get() = _activeStage
     lateinit var app: Application // La aplicacion
 
     // Podemos tener una cache de escenas cargadas
@@ -68,7 +68,7 @@ object RoutesManager {
         stage.icons.add(Image(getResourcesAsStram("icons/app-icons.png")))
         stage.scene = scene
         mainStage = stage
-        _activateStage = stage
+        _activeStage = stage
         mainStage.show()
     }
 

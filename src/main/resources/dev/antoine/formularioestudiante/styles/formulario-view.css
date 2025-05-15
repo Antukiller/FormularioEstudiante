@@ -1,0 +1,98 @@
+root {
+    /* Estilos generales de la aplicación */
+    -fx-background-color: #080C1D; /* Fondo oscuro general */
+    -fx-font-family: "Orbitron", sans-serif; /* Fuente futurista Orbitron */
+    -fx-font-size: 14px; /* Tamaño base de fuente */
+    -fx-text-fill: #001F3F; /* Color de texto azul oscuro */
+}
+
+.menu-bar {
+    /* Barra principal de menús */
+    -fx-background-color: #8000FF; /* Fondo púrpura neón */
+    -fx-text-fill: #ff0000; /* Texto blanco */
+}
+
+.menu {
+    /* Menú desplegable */
+    -fx-background-color: #1E003A; /* Fondo púrpura oscuro */
+    -fx-text-fill: #18b728; /* Texto blanco */
+}
+
+.menu-item {
+    /* Elementos dentro del menú */
+    -fx-text-fill: #1dab24; /* Texto blanco */
+}
+
+.button {
+    /* Botones */
+    -fx-background-color: #FF0080; /* Fondo rosa neón */
+    -fx-text-fill: #ffffff; /* Texto blanco */
+    -fx-font-weight: bold; /* Texto en negrita */
+    -fx-border-radius: 5px; /* Bordes redondeados */
+}
+
+.button:hover {
+    /* Botón cuando el cursor está encima */
+    -fx-background-color: #CC0066; /* Fondo rosa oscuro al pasar el mouse */
+}
+
+.table-view {
+    /* Vista de tabla */
+    -fx-background-color: #351414; /* Fondo marrón oscuro */
+    -fx-border-color: #ff0000; /* Borde rojo */
+    -fx-border-width: 2px; /* Grosor del borde */
+}
+
+.table-column {
+    /* Columnas de la tabla */
+    -fx-text-fill: #258325; /* Texto verde */
+    -fx-font-weight: bold; /* Texto en negrita */
+}
+
+.label {
+    /* Etiquetas de texto */
+    -fx-text-fill: #001F3F; /* Azul oscuro */
+    -fx-font-weight: bold; /* Texto en negrita */
+    -fx-effect: dropshadow( gaussian, #00FFFF, 3, 0.5, 1, 1 ); /* Sombra azul neón con desenfoque */
+}
+
+.text-field {
+    /* Campos de texto */
+    -fx-background-color: #000000; /* Fondo negro */
+    -fx-border-color: #00FFFF; /* Borde azul neón */
+    -fx-border-width: 2px; /* Grosor del borde */
+    -fx-text-fill: #0afc1d; /* Texto azul oscuro */
+    -fx-effect: dropshadow( gaussian, #00FFFF, 3, 0.5, 1, 1 ); /* Sombra azul neón */
+}
+
+.combo-box {
+    /* Menú desplegable (combo box) */
+    -fx-background-color: #D8E2F8; /* Azul muy claro para mejor contraste */
+    -fx-border-color: #00FFFF; /* Borde azul neón */
+    -fx-border-width: 2px; /* Grosor del borde */
+    -fx-text-fill: #000000; /* Texto negro para máxima legibilidad */
+    -fx-effect: dropshadow( gaussian, #00FFFF, 3, 0.5, 1, 1 ); /* Sombra azul neón */
+}
+
+
+.date-picker {
+    /* Selector de fecha */
+    -fx-background-color: #141F35; /* Fondo azul oscuro */
+    -fx-border-color: #00FFFF; /* Borde azul neón */
+    -fx-border-width: 2px; /* Grosor del borde */
+    -fx-text-fill: #40ff01; /* Texto azul oscuro */
+    -fx-effect: dropshadow( gaussian, #00FFFF, 3, 0.5, 1, 1 ); /* Sombra azul neón */
+}
+
+.check-box {
+    /* Casillas de verificación */
+    -fx-text-fill: #0cf805; /* Texto azul oscuro */
+    -fx-effect: dropshadow( gaussian, #00FFFF, 3, 0.5, 1, 1 ); /* Sombra azul neón */
+}
+
+.anchor-pane {
+    /* Panel de diseño tipo AnchorPane */
+    -fx-border-color: #FF0080; /* Borde rosa neón */
+    -fx-border-width: 3px; /* Grosor del borde */
+}
+
