@@ -15,24 +15,6 @@ private val country = locale.displayCountry
 private val LocaleES = Locale.forLanguageTag("es, ES")
 
 
-fun LocalDate.toLocalDate(): String {
-    return this.format(
-        DateTimeFormatter
-            .ofLocalizedDate(FormatStyle.LONG).withLocale(Locale.getDefault())
-    )
-}
-
-fun LocalDateTime.toLocalDateTime(): String {
-    return this.format(
-        DateTimeFormatter
-            .ofLocalizedTime(FormatStyle.LONG).withLocale(Locale.getDefault())
-    )
-}
-
-fun Double.toLocalMoney(): String {
-    return NumberFormat.getCurrencyInstance(Locale.getDefault()).format(this)
-}
-
 fun Double.toLocalNumber(): String {
     return NumberFormat.getNumberInstance(Locale.getDefault()).format(this)
 }

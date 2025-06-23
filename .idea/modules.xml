@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/FormularioEstudiante.iml" filepath="$PROJECT_DIR$/.idea/FormularioEstudiante.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FormularioEstudiante.main.iml" filepath="$PROJECT_DIR$/.idea/modules/FormularioEstudiante.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FormularioEstudiante.test.iml" filepath="$PROJECT_DIR$/.idea/modules/FormularioEstudiante.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IdeaProjects.FormularioEstudiante.main.iml" filepath="$PROJECT_DIR$/.idea/modules/IdeaProjects.FormularioEstudiante.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IdeaProjects.FormularioEstudiante.test.iml" filepath="$PROJECT_DIR$/.idea/modules/IdeaProjects.FormularioEstudiante.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dev.antoine.FormularioEstudiante.main.iml" filepath="$PROJECT_DIR$/.idea/modules/dev.antoine.FormularioEstudiante.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dev.antoine.FormularioEstudiante.test.iml" filepath="$PROJECT_DIR$/.idea/modules/dev.antoine.FormularioEstudiante.test.iml" />
     </modules>
