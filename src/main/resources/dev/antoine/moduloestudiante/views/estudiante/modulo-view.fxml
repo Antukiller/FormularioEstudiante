@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="680.0" stylesheets="@../../styles/formulario-view.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.antoine.moduloestudiante.estudiante.controllers.FormularioViewController">
+
+   <children>
+      <MenuBar>
+         <menus>
+            <Menu mnemonicParsing="false" text="Archivo">
+               <items>
+                  <MenuItem fx:id="menuImportar" mnemonicParsing="false" text="Importar desde Json">
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <Image url="@../../icons/file-import.png" />
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuExportar" mnemonicParsing="false" text="Exportar a Json">
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <Image url="@../../icons/file-export.png" />
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuUnzip" mnemonicParsing="false" text="Importar desde Zip">
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <Image url="@../../icons/unzip.png" />
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuZip" mnemonicParsing="false" text="Exportar a Zip">
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <Image url="@../../icons/zip.png" />
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuSalir" mnemonicParsing="false" text="Salir">
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <Image url="@../../icons/exit.png" />
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Ayuda">
+               <items>
+                  <MenuItem fx:id="menuAcercaDe" mnemonicParsing="false" text="Acerca de los Expedientes">
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <Image url="@../../icons/about.png" />
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+
+      <AnchorPane prefHeight="415.0" prefWidth="680.0">
+         <children>
+            <SplitPane dividerPositions="0.5" prefHeight="415.0" prefWidth="680.0">
+               <items>
+                  <!-- Panel Izquierdo: Tabla y Filtros -->
+                  <AnchorPane prefHeight="413.0" prefWidth="317.0">
+                     <children>
+                        <VBox prefHeight="413.0" prefWidth="335.0">
+                           <children>
+                              <HBox prefHeight="33.0" prefWidth="335.0">
+                                 <children>
+                                    <Label prefHeight="31.0" prefWidth="61.0" text="Nombre:">
+                                       <HBox.margin>
+                                          <Insets left="12.0" top="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="textBuscador" alignment="CENTER" prefHeight="25.0" prefWidth="120.0">
+                                       <HBox.margin>
+                                          <Insets left="3.0" top="4.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <ComboBox fx:id="comboTipo" prefHeight="25.0" prefWidth="120.0">
+                                       <HBox.margin>
+                                          <Insets bottom="2.0" left="5.0" top="4.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                 </children>
+                              </HBox>
+
+                              <!-- Tabla de Estudiantes -->
+                              <TableView fx:id="tableEstudiante" prefHeight="339.0" prefWidth="335.0">
+                                 <columns>
+                                    <TableColumn fx:id="tableColumNumero" prefWidth="53.0" text="Num" />
+                                    <TableColumn fx:id="tableColumnNombre" prefWidth="239.0" text="Nombre" />
+                                    <TableColumn fx:id="tableColumnCalificacion" prefWidth="65.0" text="Calif." />
+                                 </columns>
+                              </TableView>
+
+                              <!-- Estadísticas -->
+                              <HBox prefHeight="43.0" prefWidth="335.0">
+                                 <children>
+                                    <Label prefHeight="20.0" prefWidth="69.0" text="Num Apr:">
+                                       <HBox.margin>
+                                          <Insets left="13.0" top="12.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="textNumAprobados" editable="false" prefHeight="33.0" prefWidth="70.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Label prefHeight="20.0" prefWidth="83.0" text="Nota Media:">
+                                       <HBox.margin>
+                                          <Insets left="10.0" top="12.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="textNotaMedia" editable="false" prefHeight="33.0" prefWidth="69.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+
+                  <!-- Panel Derecho: Formulario -->
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="7.0" layoutY="41.0" prefHeight="52.0" prefWidth="196.0" text="Expediente de Estudiante">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+
+                        <!-- Imagen del Estudiante -->
+                        <ImageView fx:id="imageEstudiante" fitHeight="99.0" fitWidth="131.0" layoutX="210.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/sin-imagen.png" />
+                           </image>
+                        </ImageView>
+
+                        <!-- Formulario -->
+                        <GridPane layoutX="37.0" layoutY="130.0" prefHeight="239.0" prefWidth="272.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.33331298828125" minWidth="10.0" prefWidth="88.66661834716797" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.33338165283203" minWidth="10.0" prefWidth="167.33338165283203" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Núm:" />
+                              <Label text="Apellidos:" GridPane.rowIndex="3" />
+                              <Label text="Nombre:" GridPane.rowIndex="4" />
+                              <Label text="E-Mail:" GridPane.rowIndex="5" />
+                              <Label text="Fecha Nac:" GridPane.rowIndex="6" />
+                              <Label text="Calificación:" GridPane.rowIndex="7" />
+                              <Label text="Repetidor:" GridPane.rowIndex="8" />
+
+                              <TextField fx:id="textEstudianteNumero" editable="false" GridPane.columnIndex="1" />
+                              <TextField fx:id="textEstudianteApellido" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="textEstudianteNombre" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="textEstudianteEmail" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <DatePicker fx:id="dateEstudianteFechaNacimiento" disable="true" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <TextField fx:id="textEstudianteCalificacion" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <CheckBox fx:id="checkEstudianteRepetidor" disable="true" mnemonicParsing="false" text="Sí" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <Label text="NIA:" GridPane.rowIndex="1" />
+                              <TextField fx:id="textEstudianteNia" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Curso:" GridPane.rowIndex="2" />
+                              <TextField fx:id="textEstudianteCurso" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+
+                        <!-- Botones -->
+                        <HBox layoutX="1.0" layoutY="369.0" prefHeight="43.0" prefWidth="336.0">
+                           <children>
+                              <Button fx:id="botonNuevo" mnemonicParsing="false" prefHeight="30.0" prefWidth="97.0" text="Nuevo">
+                                 <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../icons/new.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="7.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="botonEditar" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" text="Editar">
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="7.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../icons/edit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="botonEliminar" mnemonicParsing="false" prefHeight="30.0" prefWidth="103.0" text="Eliminar">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="15.0" top="7.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../icons/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

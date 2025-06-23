@@ -1,4 +1,4 @@
-module dev.antoine.formularioestudiante {
+module dev.antoine.moduloestudiante {
     // JavaFX
     requires javafx.controls;
     requires javafx.fxml;
@@ -35,39 +35,40 @@ module dev.antoine.formularioestudiante {
     requires io.leangen.geantyref;
     requires kotlin.reflect;
 
+
     // Cache
     requires com.github.benmanes.caffeine;
 
     // Abrimos y exponemos el paquete a JavaFX
-    opens dev.antoine.formularioestudiante to javafx.fxml;
-    exports dev.antoine.formularioestudiante;
+    opens dev.antoine.moduloestudiante to javafx.fxml;
+    exports dev.antoine.moduloestudiante;
 
     // Rutas
-    opens dev.antoine.formularioestudiante.routes to javafx.fxml;
-    exports dev.antoine.formularioestudiante.routes;
+    opens dev.antoine.moduloestudiante.routes to javafx.fxml;
+    exports dev.antoine.moduloestudiante.routes;
 
 
 
     // Estudiante
     // Controllers
-    opens dev.antoine.formularioestudiante.estudiante.controllers to javafx.fxml;
+    opens dev.antoine.moduloestudiante.estudiante.controllers to javafx.fxml;
 
     // dtos
-    opens dev.antoine.formularioestudiante.estudiante.dto to javafx.fxml;
-    exports dev.antoine.formularioestudiante.estudiante.dto;
+    opens dev.antoine.moduloestudiante.estudiante.dto to javafx.fxml;
+    exports dev.antoine.moduloestudiante.estudiante.dto;
 
     // Modelos a javafx para poder usarlos en las vistas
-    opens dev.antoine.formularioestudiante.estudiante.models to javafx.fxml;
-    exports dev.antoine.formularioestudiante.estudiante.models;
+    opens dev.antoine.moduloestudiante.estudiante.models to javafx.fxml;
+    exports dev.antoine.moduloestudiante.estudiante.models;
 
     // Dao
-   opens dev.antoine.formularioestudiante.estudiante.dao to javafx.fxml;
-   exports dev.antoine.formularioestudiante.estudiante.dao;
+   opens dev.antoine.moduloestudiante.estudiante.dao to javafx.fxml;
+   exports dev.antoine.moduloestudiante.estudiante.dao;
 
     // Acerca de
     // Controllers
-    opens dev.antoine.formularioestudiante.acercade to javafx.fxml;
-    exports dev.antoine.formularioestudiante.acercade;
+    opens dev.antoine.moduloestudiante.acercade to javafx.fxml;
+    exports dev.antoine.moduloestudiante.acercade;
 
     // Tests kotlin standard library to jupiter.api
     // Para poder usar las librerias de test de kotlin

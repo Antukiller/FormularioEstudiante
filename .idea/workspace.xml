@@ -5,16 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62144d09-d4f6-4081-89a4-0a3ee85af227" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/FormularioEstudiante.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FormularioEstudiante.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/estudiante/dao/EstudianteDaoTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/estudiante/mapper/EstudianteMapperTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/estudiante/repository/EstudianteRpositorioTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/estudiante/service/EstudianteServicioTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/estudiante/validator/EstudianteValidatorTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/json/expedientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/json/expedientes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/controllers/DetalleViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/controllers/DetalleViewController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/controllers/FormularioViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/controllers/FormularioViewController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/routes/RoutesManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/kotlin/dev/antoine/formularioestudiante/routes/RoutesManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormularioEstudiante/src/main/resources/dev/antoine/formularioestudiante/views/acerca-de/acerca-de-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante/src/main/resources/dev/antoine/formularioestudiante/views/acerca-de/acerca-de-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FormularioEstudiante.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FormularioEstudiante.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/FormularioEstudiante.trace.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/1682763355431.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/1682763355432.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/1682763355433.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/1682763355434.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/1682763355435.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/1715191669727.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/1743778854186.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/1743779600371.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/1743780902837.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/json/expedientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/expedientes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/FormularioApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/FormularioApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/di/AppModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/controllers/DetalleViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/controllers/ExpedienteViewController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/controllers/FormularioViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/controllers/ModuloViewController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/dao/EstudianteDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/dao/EstudianteDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/dao/EstudianteEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/dao/EstudianteEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/dto/EstudianteDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/dto/EstudianteDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/mappers/Estudiante.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/mappers/Estudiante.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/models/Estudiante.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/models/Estudiante.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/validators/EstudianteValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/validators/EstudianteValidator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/viewmodels/FormularioViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/estudiante/viewmodels/ModuloViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/routes/RoutesManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/antoine/formularioestudiante/routes/RoutesManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dev/antoine/formularioestudiante/styles/acercade.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dev/antoine/formularioestudiante/styles/acercade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dev/antoine/formularioestudiante/views/estudiante/detalle-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dev/antoine/formularioestudiante/views/estudiante/expediente-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dev/antoine/formularioestudiante/views/estudiante/formulario-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dev/antoine/formularioestudiante/views/estudiante/modulo-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tables.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,23 +67,19 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="FormularioEstudiante" type="f1a62948:ProjectNode" />
               </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="FormularioEstudiante" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="FormularioEstudiante" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
-              </path>
             </expand>
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,30 +105,69 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.FormularioEstudiante [run].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Antukiller/IdeaProjects/FormularioEstudiante&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.AppConfigTest.executor": "Coverage",
+    "Gradle.CasosFelices.actualizar un estudiante.executor": "Coverage",
+    "Gradle.CasosFelices.insertar estudiante y obtener por id.executor": "Coverage",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.EstudianteDaoTest.executor": "Run",
+    "Gradle.EstudianteMapperTest.DTO a modelo y viceversa.executor": "Coverage",
+    "Gradle.EstudianteMapperTest.executor": "Coverage",
+    "Gradle.EstudianteRepositoryImplTest.executor": "Coverage",
+    "Gradle.EstudianteValidatorTest.executor": "Coverage",
+    "Gradle.EstudiantesServiceImplTest.executor": "Coverage",
+    "Gradle.FormularioEstudiante [javadoc].executor": "Run",
+    "Gradle.FormularioEstudiante [run].executor": "Run",
+    "Gradle.JdbiManagerTest.executor": "Coverage",
+    "Gradle.ModuloViewModelTest.executor": "Coverage",
+    "Gradle.Tests in 'dev.antoine.FormularioEstudiante.test'.executor": "Run",
+    "Gradle.Tests in 'estudiante'.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/antoi/IdeaProjects/FormularioEstudiante",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Antukiller\IdeaProjects\FormularioEstudiante\FormularioEstudiante\src\main\kotlin\dev\antoine\formularioestudiante\estudiante" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="FormularioEstudiante [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.FormularioEstudiante [javadoc]">
+    <configuration name="AppConfigTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;config.AppConfigTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="FormularioEstudiante [javadoc]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -115,7 +178,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="run" />
+            <option value="javadoc" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -126,41 +189,85 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FormularioEstudiante [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JdbiManagerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="run" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;database.JdbiManagerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'dev.antoine.FormularioEstudiante.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'estudiante'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;estudiante.*&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.FormularioEstudiante [run]" />
+        <item itemvalue="Gradle.FormularioEstudiante [javadoc]" />
+        <item itemvalue="Gradle.Tests in 'estudiante'" />
+        <item itemvalue="Gradle.JdbiManagerTest" />
+        <item itemvalue="Gradle.AppConfigTest" />
+        <item itemvalue="Gradle.Tests in 'dev.antoine.FormularioEstudiante.test'" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -191,5 +298,19 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/FormularioEstudiante$JdbiManagerTest.ic" NAME="JdbiManagerTest Coverage Results" MODIFIED="1750613564488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/FormularioEstudiante$EstudianteDaoTest.ic" NAME="EstudianteDaoTest Coverage Results" MODIFIED="1750607713696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/FormularioEstudiante$EstudianteMapperTest.ic" NAME="EstudianteMapperTest Coverage Results" MODIFIED="1750608849795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/FormularioEstudiante$ModuloViewModelTest.ic" NAME="ModuloViewModelTest Coverage Results" MODIFIED="1750612507017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/FormularioEstudiante$CasosFelices_actualizar_un_estudiante.ic" NAME="CasosFelices.actualizar un estudiante Coverage Results" MODIFIED="1750607804576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/FormularioEstudiante$EstudianteMapperTest_DTO_a_modelo_y_viceversa.ic" NAME="EstudianteMapperTest.DTO a modelo y viceversa Coverage Results" MODIFIED="1750608334078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/FormularioEstudiante$EstudianteRepositoryImplTest.ic" NAME="EstudianteRepositoryImplTest Coverage Results" MODIFIED="1750609189219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/FormularioEstudiante$EstudiantesServiceImplTest.ic" NAME="EstudiantesServiceImplTest Coverage Results" MODIFIED="1750610495921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/FormularioEstudiante$AppConfigTest.ic" NAME="AppConfigTest Coverage Results" MODIFIED="1750613424576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/FormularioEstudiante$Tests_in__estudiante_.ic" NAME="Tests in 'estudiante' Coverage Results" MODIFIED="1750613259344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/FormularioEstudiante$CasosFelices_insertar_estudiante_y_obtener_por_id.ic" NAME="CasosFelices.insertar estudiante y obtener por id Coverage Results" MODIFIED="1750607775567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/FormularioEstudiante$EstudianteValidatorTest.ic" NAME="EstudianteValidatorTest Coverage Results" MODIFIED="1750610038540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

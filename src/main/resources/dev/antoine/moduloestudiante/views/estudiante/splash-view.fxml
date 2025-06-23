@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      alignment="CENTER"
+      spacing="25"
+      style="-fx-background-color: linear-gradient(to bottom, #fdfdfd, #dcdcdc); -fx-padding: 60;"
+      fx:id="root">
+
+    <Label text="Iniciando la aplicación..."
+           style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: #2c2c2c;" />
+
+    <ProgressIndicator prefWidth="65" prefHeight="65">
+        <effect>
+            <DropShadow radius="8" color="#aaaaaa"/>
+        </effect>
+    </ProgressIndicator>
+
+</VBox>
